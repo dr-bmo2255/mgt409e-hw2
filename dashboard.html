@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Singer Equipment Company sales prospecting dashboard">
+  <title>The Brass Ledger | Singer Equipment Sales Desk</title>
+  <style>
+    :root {
+      --oak-deep: #1d1009;
+      --oak: #4c2a16;
+      --oak-warm: #6b3f22;
+      --leather: #251713;
+      --leather-mid: #3b241c;
+      --green: #0d3d2c;
+      --green-glass: #1c6a4c;
+      --green-light: #7ec6a3;
+      --brass: #c9a447;
+      --brass-bright: #f1d784;
+      --brass-dark: #80651f;
+      --cream: #f4ead0;
+      --paper: #f7f0dc;
+      --paper-shadow: #d3c3a1;
+      --ink: #29231c;
+      --ink-soft: #5e5548;
+      --red: #8e312b;
+      --white: #fffdf6;
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --sans: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--oak-deep);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--cream);
+      font-family: var(--sans);
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(196, 132, 68, .28), transparent 42%),
+        repeating-linear-gradient(94deg, rgba(255,255,255,.018) 0 2px, transparent 2px 18px),
+        repeating-linear-gradient(2deg, transparent 0 27px, rgba(25, 10, 3, .22) 28px 31px),
+        linear-gradient(110deg, #2b160c, var(--oak) 45%, #2b160c);
+      background-attachment: fixed;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .22;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,.18) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 70% 60%, rgba(0,0,0,.22) 0 1px, transparent 1.5px);
+      background-size: 23px 29px, 31px 37px;
+      mix-blend-mode: overlay;
+      z-index: 20;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      z-index: 99;
+      padding: .65rem 1rem;
+      color: var(--ink);
+      background: var(--brass-bright);
+      border-radius: 4px;
+    }
+
+    .skip-link:focus { left: 8px; }
+
+    .banker-lamp {
+      position: absolute;
+      right: clamp(1rem, 5vw, 5rem);
+      top: 1.2rem;
+      width: 150px;
+      height: 96px;
+      opacity: .92;
+      filter: drop-shadow(0 14px 18px rgba(0,0,0,.45));
+      pointer-events: none;
+    }
+
+    .lamp-shade {
+      position: absolute;
+      width: 128px;
+      height: 38px;
+      right: 0;
+      border: 3px solid var(--brass);
+      border-radius: 50% 50% 18% 18% / 70% 70% 22% 22%;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.28), transparent 35%),
+        linear-gradient(90deg, #0b3526, #2a805e 50%, #0b3526);
+      box-shadow: inset 0 -10px 15px rgba(0,0,0,.35), 0 9px 24px rgba(77, 235, 165, .16);
+    }
+
+    .lamp-stem {
+      position: absolute;
+      right: 61px;
+      top: 36px;
+      width: 8px;
+      height: 43px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--brass-dark), var(--brass-bright), var(--brass-dark));
+    }
+
+    .lamp-base {
+      position: absolute;
+      right: 32px;
+      bottom: 0;
+      width: 68px;
+      height: 13px;
+      border: 2px solid var(--brass-dark);
+      border-radius: 50%;
+      background: linear-gradient(180deg, var(--brass-bright), var(--brass-dark));
+    }
+
+    .masthead {
+      position: relative;
+      min-height: 190px;
+      padding: 2.1rem clamp(1rem, 5vw, 5rem) 1.6rem;
+      border-bottom: 1px solid rgba(241, 215, 132, .45);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent 12%),
+        linear-gradient(135deg, #102d23, var(--green) 48%, #071b14);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35), inset 0 -2px 0 rgba(0,0,0,.5);
+    }
+
+    .masthead-inner {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-right: 165px;
+    }
+
+    .crest {
+      flex: 0 0 86px;
+      width: 86px;
+      height: 86px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--brass);
+      border-radius: 50%;
+      color: var(--brass-bright);
+      font: 700 2rem/1 var(--serif);
+      letter-spacing: -.1em;
+      text-shadow: 0 2px 3px #000;
+      background: radial-gradient(circle, #184f3a 0 50%, #0a2b20 51%);
+      box-shadow:
+        0 0 0 5px #123b2c,
+        0 0 0 7px var(--brass-dark),
+        inset 0 0 22px rgba(0,0,0,.6);
+    }
+
+    .eyebrow {
+      margin: 0 0 .25rem;
+      color: var(--brass-bright);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--cream);
+      font: 600 clamp(2rem, 5vw, 3.7rem)/.98 var(--serif);
+      letter-spacing: -.035em;
+      text-shadow: 0 3px 8px rgba(0,0,0,.55);
+    }
+
+    .subtitle {
+      max-width: 690px;
+      margin: .65rem 0 0;
+      color: #c9dacd;
+      font-family: var(--serif);
+      font-size: clamp(.95rem, 1.6vw, 1.15rem);
+      font-style: italic;
+    }
+
+    .desk-nav {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      display: flex;
+      gap: .45rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: .65rem 1rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid #050e0b;
+      background: rgba(8, 34, 25, .94);
+      box-shadow: 0 6px 18px rgba(0,0,0,.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .desk-nav a,
+    .print-button {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: .45rem .85rem;
+      border: 1px solid rgba(201,164,71,.45);
+      border-radius: 3px;
+      color: var(--cream);
+      background: rgba(0,0,0,.16);
+      font: 700 .72rem/1 var(--sans);
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+
+    .desk-nav a:hover,
+    .desk-nav a:focus-visible,
+    .print-button:hover,
+    .print-button:focus-visible {
+      color: #12261e;
+      background: var(--brass-bright);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .workspace {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.4rem 0 5rem;
+    }
+
+    .executive-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(125px, .55fr));
+      gap: .75rem;
+      margin-bottom: 2.2rem;
+      padding: 1rem;
+      border: 1px solid #0d0a08;
+      border-radius: 14px;
+      background:
+        repeating-linear-gradient(105deg, transparent 0 8px, rgba(255,255,255,.012) 8px 10px),
+        linear-gradient(135deg, #291813, #160d0a);
+      box-shadow:
+        inset 0 0 0 3px #4a2b20,
+        inset 0 0 0 4px rgba(201,164,71,.25),
+        0 18px 32px rgba(0,0,0,.35);
+    }
+
+    .brief-note,
+    .metric {
+      min-height: 96px;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(201,164,71,.35);
+      border-radius: 7px;
+      background: linear-gradient(160deg, rgba(21,84,60,.88), rgba(5,35,25,.92));
+      box-shadow: inset 0 0 16px rgba(0,0,0,.35);
+    }
+
+    .brief-note strong,
+    .metric strong {
+      display: block;
+      color: var(--brass-bright);
+      font: 600 1.05rem var(--serif);
+    }
+
+    .brief-note span {
+      color: #d6e3d9;
+      font-size: .87rem;
+    }
+
+    .metric {
+      display: grid;
+      place-content: center;
+      text-align: center;
+    }
+
+    .metric b {
+      color: var(--white);
+      font: 700 2.2rem/1 var(--serif);
+    }
+
+    .metric span {
+      margin-top: .35rem;
+      color: var(--green-light);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin: 2.8rem .25rem 1.2rem;
+      color: var(--brass-bright);
+      font: 600 1.1rem var(--serif);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before,
+    .section-label::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, var(--brass-dark), transparent);
+    }
+
+    .paper {
+      position: relative;
+      color: var(--ink);
+      border: 1px solid #d6c7a8;
+      border-radius: 2px 5px 3px 2px;
+      background:
+        linear-gradient(90deg, rgba(176,72,50,.12) 1px, transparent 1px) 54px 0 / 1px 100%,
+        repeating-linear-gradient(0deg, transparent 0 29px, rgba(88,111,106,.095) 30px),
+        linear-gradient(135deg, #fffaf0, var(--paper));
+      box-shadow:
+        1px 2px 0 #c7b58f,
+        3px 5px 0 rgba(84,52,27,.45),
+        14px 20px 34px rgba(0,0,0,.38);
+    }
+
+    .paper::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .15;
+      background: radial-gradient(circle at 20% 10%, #fff 0 1px, transparent 2px);
+      background-size: 17px 19px;
+      mix-blend-mode: multiply;
+    }
+
+    .seller-dossier {
+      padding: clamp(1.5rem, 4vw, 3.2rem);
+      transform: rotate(-.18deg);
+    }
+
+    .paper-clip {
+      position: absolute;
+      right: 6%;
+      top: -16px;
+      z-index: 3;
+      width: 22px;
+      height: 68px;
+      border: 4px solid #897c67;
+      border-bottom: 0;
+      border-radius: 12px 12px 0 0;
+      transform: rotate(7deg);
+      filter: drop-shadow(2px 3px 2px rgba(0,0,0,.25));
+    }
+
+    .document-topline {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: .9rem;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .document-kicker {
+      margin: 0 0 .2rem;
+      color: var(--red);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .document-title {
+      margin: 0;
+      color: var(--ink);
+      font: 700 clamp(1.75rem, 4vw, 2.8rem)/1.05 var(--serif);
+      letter-spacing: -.025em;
+    }
+
+    .document-meta {
+      flex: 0 0 auto;
+      padding: .45rem .65rem;
+      border: 1px solid #978d78;
+      color: var(--ink-soft);
+      font: 700 .68rem/1.4 var(--sans);
+      letter-spacing: .07em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .summary-lede {
+      margin: 0 0 1.35rem;
+      padding: .9rem 1rem;
+      border-left: 4px solid var(--green-glass);
+      color: #352f27;
+      background: rgba(29, 104, 73, .075);
+      font: 600 1.05rem/1.65 var(--serif);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem 2rem;
+    }
+
+    .profile-block h3,
+    .target-block h4 {
+      margin: 0 0 .5rem;
+      color: var(--green);
+      font: 800 .72rem var(--sans);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .ink-list {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .ink-list li {
+      margin: .27rem 0;
+      padding-left: .1rem;
+    }
+
+    .source-note {
+      margin: 1.15rem 0 0;
+      padding-top: .8rem;
+      border-top: 1px dashed #aa9a7e;
+      color: var(--ink-soft);
+      font-size: .75rem;
+    }
+
+    .source-note a { color: #255f4d; }
+
+    .rank-ribbon {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .85rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .rank-chip {
+      position: relative;
+      min-height: 112px;
+      padding: 1rem 1rem 1rem 5rem;
+      overflow: hidden;
+      border: 1px solid rgba(241,215,132,.42);
+      border-radius: 8px;
+      background: linear-gradient(145deg, #133e2e, #071f17);
+      box-shadow: 0 10px 20px rgba(0,0,0,.3), inset 0 0 20px rgba(0,0,0,.3);
+    }
+
+    .rank-number {
+      position: absolute;
+      left: .9rem;
+      top: 50%;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      transform: translateY(-50%);
+      border: 2px solid var(--brass);
+      border-radius: 50%;
+      color: #17231e;
+      background: radial-gradient(circle, var(--brass-bright), var(--brass-dark));
+      box-shadow: 0 4px 9px rgba(0,0,0,.5);
+      font: 700 1.45rem var(--serif);
+    }
+
+    .rank-chip strong {
+      display: block;
+      color: var(--cream);
+      font: 600 1rem var(--serif);
+    }
+
+    .rank-chip span {
+      display: block;
+      margin-top: .28rem;
+      color: #a9c9b8;
+      font-size: .74rem;
+    }
+
+    .rank-chip .rank-number {
+      display: grid;
+      margin-top: 0;
+      color: #17231e;
+      font-size: 1.45rem;
+    }
+
+    .case-file {
+      position: relative;
+      margin: 2.6rem 0 4.5rem;
+      padding-top: 26px;
+    }
+
+    .folder-tab {
+      position: absolute;
+      z-index: 0;
+      left: 1.25rem;
+      top: 0;
+      min-width: 240px;
+      height: 48px;
+      padding: .55rem 1.3rem;
+      border: 1px solid #a68435;
+      border-bottom: 0;
+      border-radius: 8px 16px 0 0;
+      color: #31250e;
+      background: linear-gradient(180deg, var(--brass-bright), #b58a30);
+      box-shadow: 4px -3px 9px rgba(0,0,0,.2);
+      font: 800 .76rem var(--sans);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .target-paper {
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, .82fr);
+      gap: 1.35rem;
+      padding: clamp(1.35rem, 3.5vw, 2.5rem);
+    }
+
+    .rank-one .target-paper { transform: rotate(.13deg); }
+    .rank-two .target-paper { transform: rotate(-.16deg); }
+    .rank-three .target-paper { transform: rotate(.1deg); }
+
+    .case-heading {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: .9rem;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .seal {
+      flex: 0 0 72px;
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--red);
+      border-radius: 50%;
+      color: var(--red);
+      font: 800 1.55rem/1 var(--serif);
+      transform: rotate(-8deg);
+      box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--red);
+    }
+
+    .case-heading h3 {
+      margin: 0;
+      color: var(--ink);
+      font: 700 clamp(1.45rem, 3.4vw, 2.25rem)/1.05 var(--serif);
+    }
+
+    .case-heading p {
+      margin: .25rem 0 0;
+      color: var(--ink-soft);
+      font-size: .82rem;
+    }
+
+    .score-card {
+      margin-left: auto;
+      min-width: 90px;
+      padding: .55rem .7rem;
+      border: 1px solid #958568;
+      text-align: center;
+      background: rgba(255,255,255,.32);
+    }
+
+    .score-card b {
+      display: block;
+      color: var(--green);
+      font: 700 1.65rem/1 var(--serif);
+    }
+
+    .score-card span {
+      color: var(--ink-soft);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .contact-slip {
+      margin: .9rem 0 1.15rem;
+      padding: .85rem 1rem;
+      border: 1px solid #a99d84;
+      border-left: 6px solid var(--brass-dark);
+      background: rgba(255,255,255,.42);
+      box-shadow: inset 0 0 8px rgba(114,92,49,.1);
+    }
+
+    .contact-slip .label {
+      display: block;
+      margin-bottom: .25rem;
+      color: var(--red);
+      font-size: .64rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .contact-slip a {
+      color: #18533f;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .target-block {
+      margin-top: 1.15rem;
+    }
+
+    .fit-reason {
+      margin: .55rem 0;
+      padding: .7rem .8rem;
+      border-left: 3px solid var(--brass-dark);
+      background: rgba(201,164,71,.08);
+      font-size: .86rem;
+    }
+
+    .fit-reason strong {
+      color: var(--green);
+      font-family: var(--serif);
+    }
+
+    .checkline {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: .5rem;
+      margin: .55rem 0;
+      font-size: .82rem;
+    }
+
+    .checkmark {
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green-glass);
+      font-size: .72rem;
+      font-weight: 900;
+    }
+
+    .manager-note {
+      position: relative;
+      margin: 1.2rem 0 0;
+      padding: 1rem 1.1rem;
+      color: #373022;
+      background:
+        repeating-linear-gradient(0deg, transparent 0 23px, rgba(76,92,105,.13) 24px),
+        #f4df88;
+      box-shadow: 5px 7px 12px rgba(0,0,0,.18);
+      transform: rotate(-.6deg);
+      font: 600 .88rem/1.65 var(--serif);
+    }
+
+    .manager-note::before {
+      content: "MANAGER'S NOTE";
+      display: block;
+      margin-bottom: .35rem;
+      color: #725b18;
+      font: 800 .62rem var(--sans);
+      letter-spacing: .13em;
+    }
+
+    .email-letter {
+      position: relative;
+      align-self: start;
+      padding: 1.35rem 1.3rem 1.5rem;
+      border: 1px solid #cbbd9c;
+      color: #312b24;
+      background: #fffdf7;
+      box-shadow: 5px 8px 17px rgba(0,0,0,.2);
+      transform: rotate(.28deg);
+    }
+
+    .email-letter::before {
+      content: "DRAFT • NOT SENT";
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      padding: .35rem .5rem;
+      border: 2px solid var(--red);
+      color: var(--red);
+      font: 900 .58rem var(--sans);
+      letter-spacing: .1em;
+      transform: rotate(3deg);
+    }
+
+    .email-letter h4 {
+      margin: 0 0 .85rem;
+      color: var(--green);
+      font: 700 1.1rem var(--serif);
+    }
+
+    .email-meta {
+      margin: 0 0 1rem;
+      padding: .65rem 0;
+      border-top: 1px solid #d8ceba;
+      border-bottom: 1px solid #d8ceba;
+      font-size: .78rem;
+    }
+
+    .email-meta div {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: .35rem;
+      margin: .18rem 0;
+    }
+
+    .email-meta b {
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .email-body {
+      white-space: pre-line;
+      font: .86rem/1.55 var(--sans);
+    }
+
+    .email-review {
+      margin-top: 1rem;
+      padding: .75rem .85rem;
+      border: 1px dashed #a7873a;
+      color: #554619;
+      background: #fff8da;
+      font-size: .76rem;
+    }
+
+    .email-review strong {
+      display: block;
+      margin-bottom: .2rem;
+      color: #765f19;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .evidence-quote {
+      margin: .45rem 0;
+      padding-left: .75rem;
+      border-left: 2px solid #97845c;
+      color: var(--ink-soft);
+      font: italic .8rem/1.5 var(--serif);
+    }
+
+    .footer-stamp {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 1.25rem;
+      border: 2px solid var(--brass-dark);
+      border-radius: 7px;
+      color: var(--brass-bright);
+      background: rgba(8,30,22,.9);
+      box-shadow: 0 14px 28px rgba(0,0,0,.35), inset 0 0 20px rgba(0,0,0,.4);
+      text-align: center;
+    }
+
+    .footer-stamp strong {
+      display: block;
+      font: 700 1.25rem var(--serif);
+      letter-spacing: .05em;
+    }
+
+    .footer-stamp span {
+      color: #b7cfc2;
+      font-size: .8rem;
+    }
+
+    .fine-print {
+      margin: 1rem auto 0;
+      color: #aa9a80;
+      font-size: .7rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .executive-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .brief-note { grid-column: 1 / -1; }
+      .rank-ribbon { grid-template-columns: 1fr; }
+      .target-paper { grid-template-columns: 1fr; }
+      .email-letter { transform: none; }
+    }
+
+    @media (max-width: 650px) {
+      .banker-lamp { display: none; }
+      .masthead { min-height: 0; }
+      .masthead-inner { padding-right: 0; align-items: flex-start; }
+      .crest { width: 62px; height: 62px; flex-basis: 62px; font-size: 1.35rem; }
+      .executive-strip { grid-template-columns: 1fr; }
+      .brief-note { grid-column: auto; }
+      .profile-grid { grid-template-columns: 1fr; }
+      .document-topline { display: block; }
+      .document-meta { margin-top: .85rem; text-align: left; display: inline-block; }
+      .case-heading { align-items: flex-start; flex-wrap: wrap; }
+      .seal { width: 56px; height: 56px; flex-basis: 56px; font-size: 1.1rem; }
+      .score-card { margin-left: 0; }
+      .target-paper { padding: 1.1rem; }
+      .paper { background-position: 34px 0, 0 0, 0 0; }
+      .email-letter::before { position: static; display: inline-block; margin-bottom: .75rem; }
+    }
+
+    @media print {
+      body { color: #000; background: #fff; }
+      body::before, .banker-lamp, .desk-nav, .print-button { display: none !important; }
+      .masthead { min-height: 0; color: #000; background: #fff; box-shadow: none; border-bottom: 2px solid #000; }
+      .masthead h1, .masthead .subtitle { color: #000; text-shadow: none; }
+      .crest { color: #000; background: #fff; box-shadow: none; }
+      .workspace { width: 100%; padding: 1rem 0; }
+      .executive-strip, .rank-chip, .footer-stamp { color: #000; background: #fff; box-shadow: none; }
+      .brief-note, .metric { color: #000; background: #fff; box-shadow: none; }
+      .brief-note span, .metric span, .footer-stamp span { color: #000; }
+      .paper, .email-letter { break-inside: avoid; transform: none !important; box-shadow: none; }
+      .case-file { break-before: page; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+
+  <header class="masthead">
+    <div class="banker-lamp" aria-hidden="true">
+      <div class="lamp-shade"></div>
+      <div class="lamp-stem"></div>
+      <div class="lamp-base"></div>
+    </div>
+    <div class="masthead-inner">
+      <div class="crest" aria-hidden="true">SE</div>
+      <div>
+        <p class="eyebrow">Confidential management brief · MGT 409</p>
+        <h1>The Brass Ledger</h1>
+        <p class="subtitle">Singer Equipment Company — verified seller profile, ranked customer targets, and personalized outreach drafts</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="desk-nav" aria-label="Dashboard sections">
+    <a href="#seller">Seller profile</a>
+    <a href="#ranking">Target ranking</a>
+    <a href="#restaura">1 · Restaura</a>
+    <a href="#titan">2 · Titan</a>
+    <a href="#glendale">3 · Glendale</a>
+    <button class="print-button" type="button" onclick="window.print()">Print brief</button>
+  </nav>
+
+  <main class="workspace" id="main">
+    <section class="executive-strip" aria-label="Executive summary">
+      <div class="brief-note">
+        <strong>Executive prospecting desk</strong>
+        <span>Official-site evidence was used to qualify each company. The final order reflects Brian's managerial judgment, not an automated score alone.</span>
+      </div>
+      <div class="metric">
+        <b>3</b>
+        <span>qualified targets</span>
+      </div>
+      <div class="metric">
+        <b>3</b>
+        <span>email drafts</span>
+      </div>
+      <div class="metric">
+        <b>0</b>
+        <span>emails sent</span>
+      </div>
+    </section>
+
+    <div class="section-label" id="seller">Seller profile</div>
+    <article class="paper seller-dossier" aria-labelledby="seller-title">
+      <span class="paper-clip" aria-hidden="true"></span>
+      <header class="document-topline">
+        <div>
+          <p class="document-kicker">Verified company dossier</p>
+          <h2 class="document-title" id="seller-title">Singer Equipment Company, Inc.</h2>
+        </div>
+        <div class="document-meta">Prepared 23 Sep 2026<br>Official website evidence</div>
+      </header>
+
+      <p class="summary-lede">Singer Equipment Company provides foodservice design, equipment, and supplies, including commercial-kitchen construction support and operating-supply distribution.</p>
+
+      <div class="profile-grid">
+        <section class="profile-block">
+          <h3>Products &amp; services</h3>
+          <ul class="ink-list">
+            <li>Commercial-kitchen design and build support, from design through installation</li>
+            <li>Equipment procurement</li>
+            <li>Operating-supply distribution with regular delivery</li>
+            <li>Tabletop consulting and smallwares support</li>
+          </ul>
+        </section>
+
+        <section class="profile-block">
+          <h3>Customer profile</h3>
+          <ul class="ink-list">
+            <li>Commercial foodservice establishments</li>
+            <li>Large and small; chain and independent</li>
+            <li>Public and private organizations</li>
+            <li>East Coast operating footprint</li>
+          </ul>
+        </section>
+
+        <section class="profile-block">
+          <h3>Value proposition</h3>
+          <ul class="ink-list">
+            <li>Dedicated service, industry expertise, and segment-specific experience</li>
+            <li>Support for kitchen projects from concept to opening</li>
+            <li>A one-stop resource for equipment and recurring operating needs</li>
+            <li>Family-owned and operated; founded in 1918</li>
+          </ul>
+        </section>
+
+        <section class="profile-block">
+          <h3>Target signals</h3>
+          <ul class="ink-list">
+            <li>New locations, renovations, and commercial-kitchen construction</li>
+            <li>Multi-site foodservice operations with recurring supply needs</li>
+            <li>Organizations seeking equipment, tabletop, or supply-chain support</li>
+            <li>Higher-service foodservice concepts in Singer's East Coast territory</li>
+          </ul>
+        </section>
+      </div>
+
+      <p class="source-note">
+        <strong>Primary source:</strong>
+        <a href="https://www.singerequipment.com/" target="_blank" rel="noopener">singerequipment.com</a>.
+        Several internal pages were blocked by Cloudflare, so unsupported details were left unresolved rather than invented.
+      </p>
+    </article>
+
+    <div class="section-label" id="ranking">Manager's target ranking</div>
+    <section class="rank-ribbon" aria-label="Ranked customer targets">
+      <a class="rank-chip" href="#restaura">
+        <span class="rank-number">1</span>
+        <strong>Restaura Hospitality Group</strong>
+        <span>High-end senior-living dining; large future facilities and strong ongoing potential</span>
+      </a>
+      <a class="rank-chip" href="#titan">
+        <span class="rank-number">2</span>
+        <strong>Titan Hospitality Group</strong>
+        <span>Eleven high-profile Mid-Atlantic venues with portfolio-growth potential</span>
+      </a>
+      <a class="rank-chip" href="#glendale">
+        <span class="rank-number">3</span>
+        <strong>Glendale Dining Services</strong>
+        <span>Broad institutional portfolio and repeat business, but likely more budget-conscious</span>
+      </a>
+    </section>
+
+    <div class="section-label">Rank 1 · Priority account</div>
+    <article class="case-file rank-one" id="restaura">
+      <div class="folder-tab">Priority file 01 · Residential dining</div>
+      <div class="paper target-paper">
+        <section>
+          <header class="case-heading">
+            <div class="seal">#1</div>
+            <div>
+              <p class="document-kicker">Qualified customer target</p>
+              <h3>Restaura Hospitality Group</h3>
+              <p>Senior living and active-adult residential dining · Waltham, Massachusetts</p>
+            </div>
+            <div class="score-card"><b>84</b><span>AI fit score</span></div>
+          </header>
+
+          <div class="contact-slip">
+            <span class="label">Public business contact</span>
+            <a href="mailto:ccantwell@restaura.com">ccantwell@restaura.com</a><br>
+            Chad Cantwell · Chief Growth Officer<br>
+            <a href="https://restaura.com/" target="_blank" rel="noopener">restaura.com</a>
+          </div>
+
+          <section class="target-block">
+            <h4>Why this is a strong fit</h4>
+            <p>Restaura is a purpose-built hospitality group serving senior-living and active-adult residential communities. Its focus on culinary programs, flexible menu planning, technology, and growth creates a credible need for commercial-kitchen equipment, tabletop products, project support, and recurring operating supplies.</p>
+            <div class="fit-reason"><strong>Capability match:</strong> Singer's kitchen equipment procurement and design support align with Restaura's dedicated residential-dining operations.</div>
+            <div class="fit-reason"><strong>Geographic match:</strong> Restaura's Massachusetts office is within Singer's broad East Coast service reach.</div>
+          </section>
+
+          <section class="target-block">
+            <h4>Verified business context</h4>
+            <blockquote class="evidence-quote">“Serving senior living and active adult residential communities.”</blockquote>
+            <blockquote class="evidence-quote">“Fresh, locally sourced ingredients, personalized nutrition, and flexible menu planning are included on every plate.”</blockquote>
+          </section>
+
+          <section class="target-block">
+            <h4>Qualification checks</h4>
+            <div class="checkline"><span class="checkmark">✓</span><span><strong>Not a competitor:</strong> Restaura is a residential-dining operator, not an equipment supplier or distributor.</span></div>
+            <div class="checkline"><span class="checkmark">✓</span><span><strong>Not a random famous name:</strong> Retained for explicit dining operations, East Coast presence, growth orientation, and a public growth contact.</span></div>
+          </section>
+
+          <aside class="manager-note">My top-ranked target. Restaura's high-end culinary and technology focus makes it an opportunity I would not likely have found myself. Its large future facilities and higher-end materials could produce excellent ongoing business.</aside>
+        </section>
+
+        <aside class="email-letter" aria-label="Restaura outreach email draft">
+          <h4>Outreach correspondence</h4>
+          <div class="email-meta">
+            <div><b>To</b><span>ccantwell@restaura.com</span></div>
+            <div><b>Subject</b><span>A possible equipment and supply resource for Restaura</span></div>
+          </div>
+          <div class="email-body">Dear Mr. Cantwell,
+
+Restaura's focus on senior-living and active-adult residential dining, together with its emphasis on fresh ingredients, personalized nutrition, and flexible menu planning, suggests a thoughtful operating model. Singer Equipment Company works with commercial foodservice organizations on kitchen design-and-build projects, equipment procurement, tabletop consulting, and ongoing operating-supply distribution throughout the East Coast.
+
+As Restaura continues developing its residential-dining platform, might an equipment and supply resource be useful for community openings, renovations, or standardized operating needs? I would welcome a brief introductory call to understand how your team approaches those requirements and whether Singer's services could complement your work.
+
+No obligation, of course—simply an exploratory conversation if the timing is suitable.
+
+Best regards,
+Singer Equipment Company</div>
+          <div class="email-review">
+            <strong>Manager's email review</strong>
+            Very good at capturing the higher-end culinary and technology highlights that shape Restaura's planning. The body feels highly targeted and could stand as written.
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <div class="section-label">Rank 2 · Growth account</div>
+    <article class="case-file rank-two" id="titan">
+      <div class="folder-tab">Priority file 02 · Restaurant group</div>
+      <div class="paper target-paper">
+        <section>
+          <header class="case-heading">
+            <div class="seal">#2</div>
+            <div>
+              <p class="document-kicker">Qualified customer target</p>
+              <h3>Titan Hospitality Group</h3>
+              <p>Eleven-restaurant management group · DC, Maryland, Virginia &amp; Delaware</p>
+            </div>
+            <div class="score-card"><b>94</b><span>AI fit score</span></div>
+          </header>
+
+          <div class="contact-slip">
+            <span class="label">Public business contact</span>
+            <a href="mailto:jking@titanhospitality.com">jking@titanhospitality.com</a><br>
+            James King · Founder &amp; CEO<br>
+            <a href="https://www.titanhospitality.com/" target="_blank" rel="noopener">titanhospitality.com</a>
+          </div>
+
+          <section class="target-block">
+            <h4>Why this is a strong fit</h4>
+            <p>Titan owns, operates, and is affiliated with eleven restaurants and large venues across Singer's East Coast territory. Its multi-unit operating model and history of building and opening restaurants create plausible needs for kitchen projects, equipment procurement, tabletop products, and ongoing supplies.</p>
+            <div class="fit-reason"><strong>Project match:</strong> A growing restaurant portfolio can require kitchen planning, renovations, new-site equipment, and installation support.</div>
+            <div class="fit-reason"><strong>Recurring match:</strong> Eleven Mid-Atlantic venues can create a continuing need for operating supplies and standardized tabletop procurement.</div>
+          </section>
+
+          <section class="target-block">
+            <h4>Verified business context</h4>
+            <blockquote class="evidence-quote">“Titan Hospitality Group is the premier restaurant management group in the Mid-Atlantic region with over 25 years of restaurant management experience.”</blockquote>
+            <blockquote class="evidence-quote">“Owns, operates and is affiliated with restaurants in DC, Maryland, Virginia and Delaware.”</blockquote>
+          </section>
+
+          <section class="target-block">
+            <h4>Qualification checks</h4>
+            <div class="checkline"><span class="checkmark">✓</span><span><strong>Not a competitor:</strong> Titan manages restaurants; it does not sell foodservice equipment.</span></div>
+            <div class="checkline"><span class="checkmark">✓</span><span><strong>Not a fame pick:</strong> Retained for eleven verified venues, portfolio growth potential, and direct geographic overlap.</span></div>
+          </section>
+
+          <aside class="manager-note">My second-ranked target. Titan's high-end, large venues and eleven-location portfolio suggest future expansion. A successful project would be publicly visible and could also lead to opportunities with competing restaurant groups.</aside>
+        </section>
+
+        <aside class="email-letter" aria-label="Titan outreach email draft">
+          <h4>Outreach correspondence</h4>
+          <div class="email-meta">
+            <div><b>To</b><span>jking@titanhospitality.com</span></div>
+            <div><b>Subject</b><span>Supporting Titan's Mid-Atlantic restaurant growth</span></div>
+          </div>
+          <div class="email-body">Dear Mr. King,
+
+Titan's eleven-restaurant portfolio across DC, Maryland, Virginia, and Delaware caught my attention. Singer Equipment Company supports commercial foodservice organizations with kitchen design-and-build services, equipment procurement, tabletop consulting, and ongoing operating-supply distribution throughout the East Coast.
+
+Given Titan's multi-unit operating model and history of building and opening restaurants, I wondered whether Singer could be useful on an upcoming renovation, expansion, or new-concept project. We can also discuss a dependable supply arrangement for the everyday items that keep several kitchens moving.
+
+Would a brief introductory conversation be worthwhile? I would be glad to learn how Titan currently handles equipment and operating-supply needs and determine whether there is a sensible point of entry.
+
+Best regards,
+Singer Equipment Company</div>
+          <div class="email-review">
+            <strong>Manager's email review · revise before use</strong>
+            The most vague and AI-like draft. “Your restaurant portfolio ... caught my attention” feels generic. Titan's website communicates quality through photography more than text, so this needs more specific personalization before use.
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <div class="section-label">Rank 3 · Repeat-business account</div>
+    <article class="case-file rank-three" id="glendale">
+      <div class="folder-tab">Priority file 03 · Contract dining</div>
+      <div class="paper target-paper">
+        <section>
+          <header class="case-heading">
+            <div class="seal">#3</div>
+            <div>
+              <p class="document-kicker">Qualified customer target</p>
+              <h3>Glendale Dining Services</h3>
+              <p>Contract dining · Senior living, residential care &amp; special schools</p>
+            </div>
+            <div class="score-card"><b>88</b><span>AI fit score</span></div>
+          </header>
+
+          <div class="contact-slip">
+            <span class="label">Public business contact</span>
+            <a href="mailto:sales@glendalediningservices.com">sales@glendalediningservices.com</a><br>
+            Sales team · Hauppauge, New York<br>
+            <a href="https://glendalediningservices.com/" target="_blank" rel="noopener">glendalediningservices.com</a>
+          </div>
+
+          <section class="target-block">
+            <h4>Why this is a strong fit</h4>
+            <p>Glendale provides turnkey contract dining in senior living, residential care, and special-school settings. Its on-site kitchen model and broad institutional portfolio can create recurring demand for kitchen equipment, construction support, tabletop smallwares, and restaurant operating supplies.</p>
+            <div class="fit-reason"><strong>Construction match:</strong> Glendale's teams work in on-site kitchens across residential communities, creating plausible renovation and equipment needs.</div>
+            <div class="fit-reason"><strong>Supply match:</strong> Multi-community dining operations can benefit from dependable smallwares and operating-supply distribution.</div>
+          </section>
+
+          <section class="target-block">
+            <h4>Verified business context</h4>
+            <blockquote class="evidence-quote">“Senior living communities choose Glendale Dining Services for restaurant-inspired contract dining services.”</blockquote>
+            <blockquote class="evidence-quote">“Our professional chefs, nutritionists and registered dietitians collaborate in your on-site kitchen.”</blockquote>
+          </section>
+
+          <section class="target-block">
+            <h4>Qualification checks</h4>
+            <div class="checkline"><span class="checkmark">✓</span><span><strong>Not a competitor:</strong> Glendale operates dining programs; it is not an equipment manufacturer or distributor.</span></div>
+            <div class="checkline"><span class="checkmark">✓</span><span><strong>Not a random pick:</strong> Retained for verified on-site kitchen operations, several institutional markets, and a public sales email.</span></div>
+          </section>
+
+          <aside class="manager-note">My third-ranked target. Glendale is appropriate and its broad portfolio could create repeat business, but its website suggests a tighter budget. The opportunity is practical rather than visually high-profile.</aside>
+        </section>
+
+        <aside class="email-letter" aria-label="Glendale outreach email draft">
+          <h4>Outreach correspondence</h4>
+          <div class="email-meta">
+            <div><b>To</b><span>sales@glendalediningservices.com</span></div>
+            <div><b>Subject</b><span>Foodservice equipment support for Glendale's on-site kitchens</span></div>
+          </div>
+          <div class="email-body">Hello Glendale Dining Services team,
+
+Your work with senior-living and residential-care communities—particularly the emphasis on collaborative, on-site kitchens and restaurant-inspired dining—seems closely aligned with Singer Equipment Company's capabilities.
+
+Singer provides commercial-kitchen design-and-build support from concept through installation, equipment procurement, tabletop consulting, and operating-supply distribution for commercial foodservice establishments throughout the East Coast. That combination may be useful when a client community is opening, renovating, or refreshing a dining operation.
+
+Would you be open to a short conversation about the kinds of kitchen projects Glendale most often encounters? If helpful, we could simply compare notes on where an equipment and supply partner might complement your dining-services work without disrupting your existing model.
+
+Thank you for considering it.
+
+Best regards,
+Singer Equipment Company</div>
+          <div class="email-review">
+            <strong>Manager's email review</strong>
+            Effective because it takes a distinct approach: Singer's kitchen-construction capabilities are paired with smallwares—glasses, plates—and restaurant-supply distribution. This draft could stand as written.
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <footer class="footer-stamp">
+      <strong>Manager Review Copy · Draft Outreach Only</strong>
+      <span>Prepared from public business information. No emails, forms, or messages were sent.</span>
+    </footer>
+    <p class="fine-print">The Brass Ledger · Foundations of AI for Managers · Static offline presentation · All dashboard content is embedded in this file.</p>
+  </main>
+</body>
+</html>

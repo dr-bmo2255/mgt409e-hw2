@@ -1,0 +1,43 @@
+{
+  "seller_company_name": "Singer Equipment Company, Inc.",
+  "generated_at_utc": "2026-09-24T03:00:05Z",
+  "safety_note": "DRAFTS ONLY — NO EMAILS WERE SENT",
+  "emails": [
+    {
+      "target_company_name": "Titan Hospitality Group",
+      "to_email": "jking@titanhospitality.com",
+      "subject": "Supporting Titan’s Mid-Atlantic restaurant growth",
+      "body": "Dear Mr. King,\n\nTitan’s eleven-restaurant portfolio across DC, Maryland, Virginia, and Delaware caught my attention. Singer Equipment Company supports commercial foodservice organizations with kitchen design-and-build services, equipment procurement, tabletop consulting, and ongoing operating-supply distribution throughout the East Coast.\n\nGiven Titan’s multi-unit operating model and history of building and opening restaurants, I wondered whether Singer could be useful on an upcoming renovation, expansion, or new-concept project. We can also discuss a dependable supply arrangement for the everyday items that keep several kitchens moving.\n\nWould a brief introductory conversation be worthwhile? I would be glad to learn how Titan currently handles equipment and operating-supply needs and determine whether there is a sensible point of entry.\n\nBest regards,\nSinger Equipment Company",
+      "personalization_basis": [
+        "Titan states that it operates eleven restaurants.",
+        "Titan’s official site identifies its DC, Maryland, Virginia, and Delaware footprint.",
+        "Singer’s verified profile states East Coast distribution and commercial-kitchen design, equipment, and supply capabilities."
+      ],
+      "status": "draft_not_sent"
+    },
+    {
+      "target_company_name": "Glendale Dining Services",
+      "to_email": "sales@glendalediningservices.com",
+      "subject": "Foodservice equipment support for Glendale’s on-site kitchens",
+      "body": "Hello Glendale Dining Services team,\n\nYour work with senior-living and residential-care communities—particularly the emphasis on collaborative, on-site kitchens and restaurant-inspired dining—seems closely aligned with Singer Equipment Company’s capabilities.\n\nSinger provides commercial-kitchen design-and-build support from concept through installation, equipment procurement, tabletop consulting, and operating-supply distribution for commercial foodservice establishments throughout the East Coast. That combination may be useful when a client community is opening, renovating, or refreshing a dining operation.\n\nWould you be open to a short conversation about the kinds of kitchen projects Glendale most often encounters? If helpful, we could simply compare notes on where an equipment and supply partner might complement your dining-services work without disrupting your existing model.\n\nThank you for considering it.\n\nBest regards,\nSinger Equipment Company",
+      "personalization_basis": [
+        "Glendale explicitly describes turnkey dining services for residential-care communities.",
+        "Glendale says its chefs and nutrition professionals collaborate in on-site kitchens.",
+        "Singer’s verified profile states commercial-kitchen design-and-build, equipment procurement, and East Coast distribution capabilities."
+      ],
+      "status": "draft_not_sent"
+    },
+    {
+      "target_company_name": "Restaura Hospitality Group",
+      "to_email": "ccantwell@restaura.com",
+      "subject": "A possible equipment and supply resource for Restaura",
+      "body": "Dear Mr. Cantwell,\n\nRestaura’s focus on senior-living and active-adult residential dining, together with its emphasis on fresh ingredients, personalized nutrition, and flexible menu planning, suggests a thoughtful operating model. Singer Equipment Company works with commercial foodservice organizations on kitchen design-and-build projects, equipment procurement, tabletop consulting, and ongoing operating-supply distribution throughout the East Coast.\n\nAs Restaura continues developing its residential-dining platform, might an equipment and supply resource be useful for community openings, renovations, or standardized operating needs? I would welcome a brief introductory call to understand how your team approaches those requirements and whether Singer’s services could complement your work.\n\nNo obligation, of course—simply an exploratory conversation if the timing is suitable.\n\nBest regards,\nSinger Equipment Company",
+      "personalization_basis": [
+        "Restaura states that it serves senior-living and active-adult residential communities.",
+        "Restaura highlights culinary, technology, and flexible menu-planning capabilities.",
+        "The official site lists Mr. Cantwell as Chief Growth Officer and publishes his business email; Singer’s profile verifies East Coast equipment and supply services."
+      ],
+      "status": "draft_not_sent"
+    }
+  ]
+}

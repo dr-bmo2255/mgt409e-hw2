@@ -1,0 +1,202 @@
+{
+  "company_name": "Singer Equipment Company, Inc.",
+  "company_website": "https://www.singerequipment.com/",
+  "profile_generated_at_utc": "2026-09-24T02:39:51Z",
+  "requested_information": "build a profile of this company",
+  "company_summary": {
+    "statement": "Singer Equipment Company provides foodservice design, equipment, and supplies, including commercial-kitchen construction support and operating-supply distribution.",
+    "evidence": "Foodservice Design, Equipment, & Supplies",
+    "source_urls": [
+      "https://www.singerequipment.com/"
+    ]
+  },
+  "products_and_services": [
+    {
+      "statement": "Singer offers design-and-build services for commercial kitchens, covering work from design through installation.",
+      "evidence": "We offer a full suite of services to support the construction of commercial kitchens, from design through installation.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "Singer provides distribution supply and regular delivery of operating supplies for commercial foodservice establishments.",
+      "evidence": "Our distribution business provides regular delivery of operating supplies for commercial foodservice establishments throughout the East Coast.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "The website identifies equipment procurement and tabletop consulting as service areas.",
+      "evidence": "DESIGN & BUILD\nEQUIPMENT PROCUREMENT\nDISTRIBUTION SUPPLY\nTABLETOP CONSULTING",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "industries_served": [
+    {
+      "statement": "Singer serves the foodservice industry.",
+      "evidence": "THE MARKETS WE SERVE\nThe foodservice industry is remarkably diverse, and we serve it all",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "customer_types": [
+    {
+      "statement": "Singer serves large and small, chain and independent, public and private foodservice organizations.",
+      "evidence": "we serve it all: large and small, chain and independent, public and private.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "The website references commercial foodservice establishments as distribution customers.",
+      "evidence": "commercial foodservice establishments throughout the East Coast",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "problems_solved": [
+    {
+      "statement": "Singer helps customers bring commercial-kitchen visions from concept through opening and beyond.",
+      "evidence": "Tell us about your vision, and we’ll work with you to bring it to life.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "Singer states that it helps foodservice customers grow, sustain, and transform.",
+      "evidence": "We help our customers grow, sustain, and transform.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "value_propositions": [
+    {
+      "statement": "Singer claims to provide dedicated service, industry expertise, and segment-specific experience for projects.",
+      "evidence": "with dedicated service, industry expertise, and segment-specific experience.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "Singer promotes superior customer service.",
+      "evidence": "Superior Customer Service Since 1918",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "A customer testimonial describes Singer as a one-stop shop able to obtain needed items immediately.",
+      "evidence": "The whole brand is a one-stop shop. I would recommend Singer to a friend or another company because of the simple fact that whatever you need, they can get it to you immediately.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "differentiators": [
+    {
+      "statement": "Singer identifies itself as family-owned and operated and says it was founded in 1918.",
+      "evidence": "Singer Equipment was founded in 1918 by my grandfather. Being family-owned and operated is critical",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "Singer says it offers segment-specific experience and dedicated service for customer projects.",
+      "evidence": "with dedicated service, industry expertise, and segment-specific experience.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "named_customers": [
+    {
+      "statement": "Battleground Country Club is named in a customer testimonial.",
+      "evidence": "Vincent Sanchez\nGeneral Manager\nBattleground Country Club",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "geographic_reach": [
+    {
+      "statement": "Singer states that its distribution business serves commercial foodservice establishments throughout the East Coast.",
+      "evidence": "throughout the East Coast",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "target_customer_signals": [
+    {
+      "statement": "The website signals that Singer targets commercial foodservice establishments and organizations across a broad range of sizes and ownership models.",
+      "evidence": "large and small, chain and independent, public and private",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "A relevant buying signal is a need for commercial-kitchen construction support from concept to installation and opening.",
+      "evidence": "We offer a full suite of services to support the construction of commercial kitchens, from design through installation.",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "buyer_role_signals": [
+    {
+      "statement": "The site names a General Manager as a customer-testimonial contact role.",
+      "evidence": "Vincent Sanchez\nGeneral Manager",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    },
+    {
+      "statement": "The site identifies a President & CEO as a company leadership role.",
+      "evidence": "Fred Singer\nPresident & CEO",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "requested_information_findings": [
+    {
+      "statement": "Singer Equipment Company is a foodservice design, equipment, and supplies provider serving commercial foodservice establishments, with design/build and distribution capabilities.",
+      "evidence": "Foodservice Design, Equipment, & Supplies",
+      "source_urls": [
+        "https://www.singerequipment.com/"
+      ]
+    }
+  ],
+  "pages_crawled": [
+    {
+      "title": "Singer Equipment Co. | Foodservice Supplies, Equipment & Design",
+      "url": "https://www.singerequipment.com/"
+    },
+    {
+      "title": "Attention Required! | Cloudflare",
+      "url": "https://www.singerequipment.com/industries/foodservice-management"
+    },
+    {
+      "title": "Attention Required! | Cloudflare",
+      "url": "https://www.singerequipment.com/industries"
+    },
+    {
+      "title": "Attention Required! | Cloudflare",
+      "url": "https://www.singerequipment.com/find-a-location"
+    },
+    {
+      "title": "Attention Required! | Cloudflare",
+      "url": "https://www.singerequipment.com/industries/hotels"
+    }
+  ],
+  "unresolved_items": [
+    "Specific industry/market verticals beyond the general foodservice market could not be verified because relevant official pages were blocked by Cloudflare.",
+    "A complete location list could not be verified because the official locations page was blocked by Cloudflare.",
+    "Additional named customers, detailed product catalog information, and more specific buyer roles were not verified on the accessible homepage."
+  ]
+}

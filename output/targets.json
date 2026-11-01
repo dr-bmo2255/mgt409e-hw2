@@ -1,0 +1,209 @@
+{
+  "seller_company_name": "Singer Equipment Company, Inc.",
+  "profile_path": "C:\\Users\\bmore\\MGT409\\Homework 2\\assets\\company_profile.json",
+  "generated_at_utc": "2026-09-24T03:00:05Z",
+  "requested_target_count": 3,
+  "targets": [
+    {
+      "company_name": "Titan Hospitality Group",
+      "website": "https://www.titanhospitality.com/",
+      "fit_score": 94,
+      "fit_summary": "A strong Mid-Atlantic restaurant-group prospect operating eleven restaurants across Singer’s stated East Coast distribution territory.",
+      "fit_reasons": [
+        {
+          "seller_capability": "Commercial-kitchen design-and-build support from concept through installation, plus equipment procurement.",
+          "target_need_or_signal": "Titan owns, operates, and is affiliated with multiple restaurants and describes its founder’s work in building and opening restaurants.",
+          "rationale": "A multi-unit restaurant operator with an active restaurant-opening and management history is a credible fit for kitchen projects, equipment procurement, and operating supplies.",
+          "target_source_urls": [
+            "https://www.titanhospitality.com/",
+            "https://www.titanhospitality.com/about/"
+          ]
+        },
+        {
+          "seller_capability": "Distribution supply and regular delivery of operating supplies for commercial foodservice establishments throughout the East Coast.",
+          "target_need_or_signal": "Titan operates restaurants in DC, Maryland, Virginia, and Delaware.",
+          "rationale": "Titan’s Mid-Atlantic footprint aligns directly with Singer’s stated East Coast service area and creates a plausible recurring-supply need.",
+          "target_source_urls": [
+            "https://www.titanhospitality.com/"
+          ]
+        }
+      ],
+      "business_context": [
+        {
+          "statement": "Titan Hospitality Group is a restaurant management group in the Mid-Atlantic region.",
+          "evidence": "Titan Hospitality Group is the premier restaurant management group in the Mid-Atlantic region with over 25 years of restaurant management experience.",
+          "source_urls": [
+            "https://www.titanhospitality.com/"
+          ]
+        },
+        {
+          "statement": "Titan owns, operates, and is affiliated with restaurants in DC, Maryland, Virginia, and Delaware.",
+          "evidence": "owns, operates and is affiliated with restaurants in DC, Maryland, Virginia and Delaware.",
+          "source_urls": [
+            "https://www.titanhospitality.com/"
+          ]
+        },
+        {
+          "statement": "Titan’s founder is described as the CEO and owner of a group with eleven restaurants.",
+          "evidence": "he is now the CEO and Owner of Titan Hospitality Group with eleven restaurants",
+          "source_urls": [
+            "https://www.titanhospitality.com/about/"
+          ]
+        }
+      ],
+      "contact_emails": [
+        {
+          "email": "jking@titanhospitality.com",
+          "source_url": "https://www.titanhospitality.com/about/",
+          "context": "Publicly listed business email associated with James King, Founder & CEO."
+        }
+      ],
+      "competitor_check": "Titan is presented as a restaurant management and operating group, not as a foodservice-equipment designer, distributor, or reseller; no competing Singer-style offering was evidenced in the researched pages.",
+      "random_or_fame_only_check": "Retained for verified Mid-Atlantic restaurant operations, eleven-restaurant scale, and direct geography overlap—not fame.",
+      "source_urls": [
+        "https://www.titanhospitality.com/",
+        "https://www.titanhospitality.com/about/"
+      ]
+    },
+    {
+      "company_name": "Glendale Dining Services",
+      "website": "https://glendalediningservices.com/",
+      "fit_score": 88,
+      "fit_summary": "A credible institutional-foodservice prospect whose senior-living and residential-care clients operate on-site kitchens and may require equipment, design, and supplies.",
+      "fit_reasons": [
+        {
+          "seller_capability": "Commercial-kitchen design-and-build support and equipment procurement.",
+          "target_need_or_signal": "Glendale explicitly describes collaborative work in on-site kitchens and turnkey dining-service operations for senior-living and residential-care communities.",
+          "rationale": "Glendale’s on-site-kitchen operating model creates a grounded opportunity for kitchen equipment, project support, and replacement or expansion needs at served communities.",
+          "target_source_urls": [
+            "https://glendalediningservices.com/",
+            "https://glendalediningservices.com/about-us/"
+          ]
+        },
+        {
+          "seller_capability": "Operating-supply distribution for commercial foodservice establishments.",
+          "target_need_or_signal": "Glendale develops menus using local, regional, and national suppliers and serves residents, guests, staff, and students.",
+          "rationale": "Its multi-community dining operations and supplier-based menu program are consistent with a potential need for dependable foodservice operating supplies.",
+          "target_source_urls": [
+            "https://glendalediningservices.com/",
+            "https://glendalediningservices.com/about-us/"
+          ]
+        }
+      ],
+      "business_context": [
+        {
+          "statement": "Glendale provides contract dining services to senior-living communities.",
+          "evidence": "Senior living communities choose Glendale Dining Services for restaurant-inspired contract dining services.",
+          "source_urls": [
+            "https://glendalediningservices.com/"
+          ]
+        },
+        {
+          "statement": "Glendale provides turnkey dining services to residential-care communities.",
+          "evidence": "Residential care communities count on Glendale Dining Services for turnkey contract dining services.",
+          "source_urls": [
+            "https://glendalediningservices.com/"
+          ]
+        },
+        {
+          "statement": "Glendale collaborates in on-site kitchens and uses professional culinary and nutrition staff.",
+          "evidence": "Our professional chefs, nutritionists and registered dietitians collaborate in your on-site kitchen",
+          "source_urls": [
+            "https://glendalediningservices.com/"
+          ]
+        }
+      ],
+      "contact_emails": [
+        {
+          "email": "sales@glendalediningservices.com",
+          "source_url": "https://glendalediningservices.com/",
+          "context": "Public sales email listed by the official website."
+        }
+      ],
+      "competitor_check": "Glendale is a contract dining-services operator for senior living, residential care, and special schools; the researched pages do not present it as an equipment manufacturer, distributor, or reseller, so it is treated as a prospective operator rather than a direct Singer competitor.",
+      "random_or_fame_only_check": "Retained because the official site documents on-site kitchen operations and multiple institutional markets, with a public sales email—not because of brand prominence.",
+      "source_urls": [
+        "https://glendalediningservices.com/",
+        "https://glendalediningservices.com/about-us/"
+      ]
+    },
+    {
+      "company_name": "Restaura Hospitality Group",
+      "website": "https://restaura.com/",
+      "fit_score": 84,
+      "fit_summary": "A specialized senior-living hospitality operator with a stated focus on residential dining, culinary programs, technology, and growth—an appropriate equipment and supply prospect in Singer’s East Coast market.",
+      "fit_reasons": [
+        {
+          "seller_capability": "Commercial-kitchen equipment procurement and design support for foodservice operations.",
+          "target_need_or_signal": "Restaura describes a purpose-built hospitality group serving senior-living and active-adult residential communities, with culinary operations and flexible menu planning.",
+          "rationale": "Restaura’s dedicated residential-dining model suggests recurring requirements for commercial kitchen equipment, tabletop, and operating supplies across client communities.",
+          "target_source_urls": [
+            "https://restaura.com/"
+          ]
+        },
+        {
+          "seller_capability": "Foodservice distribution and operating-supply support throughout the East Coast.",
+          "target_need_or_signal": "Restaura maintains an office in Waltham, Massachusetts, and describes a growth-oriented senior-living dining platform.",
+          "rationale": "Its Massachusetts base places it within Singer’s broad East Coast reach, while its stated growth orientation makes a supplier conversation relevant.",
+          "target_source_urls": [
+            "https://restaura.com/",
+            "https://restaura.com/about-us/our-team/"
+          ]
+        }
+      ],
+      "business_context": [
+        {
+          "statement": "Restaura serves senior-living and active-adult residential communities.",
+          "evidence": "Serving senior living and active adult residential communities",
+          "source_urls": [
+            "https://restaura.com/"
+          ]
+        },
+        {
+          "statement": "Restaura emphasizes fresh ingredients, personalized nutrition, and flexible menu planning.",
+          "evidence": "Fresh, locally sourced ingredients, personalized nutrition, and flexible menu planning are included on every plate.",
+          "source_urls": [
+            "https://restaura.com/"
+          ]
+        },
+        {
+          "statement": "Restaura lists a Waltham, Massachusetts office and identifies a Chief Growth Officer.",
+          "evidence": "260 Charles Street\nSuite 301\nWaltham, MA 02453",
+          "source_urls": [
+            "https://restaura.com/about-us/our-team/"
+          ]
+        }
+      ],
+      "contact_emails": [
+        {
+          "email": "ccantwell@restaura.com",
+          "source_url": "https://restaura.com/about-us/our-team/",
+          "context": "Public business email associated with Chad Cantwell, Chief Growth Officer."
+        }
+      ],
+      "competitor_check": "Restaura is described as a residential-dining and hospitality operator, not a commercial-kitchen equipment supplier or distributor; no direct competing Singer offering was evidenced in the researched pages.",
+      "random_or_fame_only_check": "Retained for explicit senior-living dining operations, culinary focus, East Coast presence, and a public growth-contact email—not general name recognition.",
+      "source_urls": [
+        "https://restaura.com/",
+        "https://restaura.com/about-us/our-team/"
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "company_name": "The Rose Group",
+      "website": "https://www.myrosegroup.com/",
+      "reason": "Official site returned 403 Forbidden during research, and no verified public business email was available."
+    },
+    {
+      "company_name": "Richmond Restaurant Group",
+      "website": "https://richmondrestaurantgroup.com/",
+      "reason": "Official site provided restaurant context but only a contact form and no verified public business email."
+    },
+    {
+      "company_name": "Atria Senior Living",
+      "website": "https://www.atriaseniorliving.com/",
+      "reason": "The official site verified a customer-service email, but the available contact route was not clearly a vendor, procurement, or business-development channel; stronger operational contacts were available among retained candidates."
+    }
+  ]
+}
